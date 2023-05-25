@@ -207,7 +207,7 @@ func main() {
 			} else if v == '.' || v == '?' || v == '!' || v == ':' || v == ';' || v == ',' || v == '"' || v == '\'' {
 				if v == '\'' && (prev != ' ' || prev != '"') {
 					if firstS {
-						if str[n+1] == 't' && prev == 'n' {
+						if (str[n+1] == 't' && prev == 'n') || str[n+1] == 's' {
 							cStr += string(v)
 							prev = v
 							quote = false
