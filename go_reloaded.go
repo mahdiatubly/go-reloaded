@@ -285,15 +285,15 @@ func main() {
 		counter := int64(0)
 		//looping over the original list and caculate what is needed and creating the new list.
 		for i := int64(0); i < int64(len(strArr)); i++ {
-			if strings.Count(strArr[i], "(hex)") == 1 {
+			if strings.Count(strArr[i], "(hex)") > 0 {
 				counter++
 				UpdatedArr[i-counter] = intToString(convertToInt(strArr[i-1], 16)) + strArr[i][5:]
 				continue
-			} else if strings.Count(strArr[i], "(bin)") == 1 {
+			} else if strings.Count(strArr[i], "(bin)") > 0 {
 				counter++
 				UpdatedArr[i-counter] = intToString(convertToInt(strArr[i-1], 2)) + strArr[i][5:]
 				continue
-			} else if strings.Count(strArr[i], "(up)") == 1 {
+			} else if strings.Count(strArr[i], "(up)") > 0 {
 				counter++
 				UpdatedArr[i-counter] = strings.ToUpper(strArr[i-1]) + strArr[i][4:]
 				continue
