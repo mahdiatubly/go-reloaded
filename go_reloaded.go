@@ -212,7 +212,11 @@ func main() {
 							prev = v
 							quote = false
 						} else {
-							cStr += " " + string(v)
+							if prev == '"' {
+								cStr += string(v)
+							} else {
+								cStr += " " + string(v)
+							}
 							prev = v
 							firstS = false
 							quote = false
@@ -225,7 +229,11 @@ func main() {
 					}
 				} else if v == '"' && (prev != ' ' || prev != '\'') {
 					if firstD {
-						cStr += " " + string(v)
+						if prev == '\'' || prev == '"' {
+							cStr += string(v)
+						} else {
+							cStr += " " + string(v)
+						}
 						prev = v
 						firstD = false
 						quote = false
