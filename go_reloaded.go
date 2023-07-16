@@ -353,7 +353,7 @@ func main() {
 		// combine the list components to create the output string
 		output := strings.Join(UpdatedArr, " ")
 		// writing the output to the defined file.
-		file, err := os.OpenFile(os.Args[2], os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+		file, err := os.OpenFile(os.Args[2], os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {
 			fmt.Println("Could not open " + os.Args[2])
 			return
