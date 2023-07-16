@@ -79,17 +79,17 @@ This function conversts given value from a char into int.
 func charToInt(char rune) int {
 	if char >= '0' && char <= '9' {
 		return int(char - 48)
-	} else if char == 'A' {
+	} else if char == 'A' || char == 'a' {
 		return 10
-	} else if char == 'B' {
+	} else if char == 'B' || char == 'b' {
 		return 11
-	} else if char == 'C' {
+	} else if char == 'C' || char == 'c' {
 		return 12
-	} else if char == 'D' {
+	} else if char == 'D' || char == 'd' {
 		return 13
-	} else if char == 'E' {
+	} else if char == 'E' || char == 'e' {
 		return 14
-	} else if char == 'F' {
+	} else if char == 'F' || char == 'f' {
 		return 15
 	}
 	return -1
